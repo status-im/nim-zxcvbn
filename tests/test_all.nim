@@ -16,5 +16,9 @@ doAssert strongPassword > fourWords
 doAssert fourWords > remixedLongWord
 doAssert remixedLongWord > remixedQwerty
 doAssert remixedQwerty > abracadabra
+doAssert remixedQwerty > qwerty
+doAssert remixedQwerty > cat
+doAssert remixedQwerty > a
+doAssert remixedQwerty > longRepeatingSequence
 
 echo "SUCCESS"
