@@ -32,11 +32,6 @@
 /* printf */
 #include <stdio.h>
 
-/* For pre-compiled headers under windows */
-#ifdef _WIN32
-#include "stdafx.h"
-#endif
-
 /* Minimum number of characters in a incrementing/decrementing sequence match */
 #define MIN_SEQUENCE_LEN 3
 
