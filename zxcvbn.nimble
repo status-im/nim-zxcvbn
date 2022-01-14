@@ -10,7 +10,13 @@ skipDirs      = @["tests"]
 requires "nim >= 1.0.0",
          "testutils"
 
+proc test(args, path: string) =
+  if not dirExists "build":
+    mkDir "build"
+  exec "nim " & getEnv("TEST_LANG", "c") & " " & getEnv("NIMFLAGS") & " " & args &
+    " --outdir:build -r --hints:off --skipParentCfg " & path
+
 task test, "Run all tests":
-  exec "nim c -r --threads:off tests/test_all"
-  exec "nim c -r --threads:on tests/test_all"
+  test "--threads:off", "tests/test_all.nim"
+  test "--threads:on", "tests/test_all.nim"
 
