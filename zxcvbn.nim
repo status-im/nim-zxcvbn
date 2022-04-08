@@ -1,7 +1,7 @@
 {.compile: "zxcvbn/C/zxcvbn.c".}
 
 when not defined(msvc):
-  {.passL: "-lm".}
+  {.passl: "-lm".}
 
 type
   MatchKind = enum
@@ -39,7 +39,7 @@ proc ZxcvbnMatch(passwd: cstring, userDict: ptr UncheckedArray[cstring], info: p
   ##  info        The address of a pointer variable to receive information on the parts
   ##               of the password. This parameter can be null if no information is wanted.
   ##               The data should be freed by calling ZxcvbnFreeInfo().
-  ## 
+  ##
   ## Returns the entropy of the password (in bits).
 
 proc ZxcvbnFreeInfo(info: CMatchInfoPtr) {.importc.}
