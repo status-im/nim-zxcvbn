@@ -1,7 +1,7 @@
 {.compile: "zxcvbn/C/zxcvbn.c".}
 
 when not defined(msvc):
-  {.passL: "-lm".}
+  {.passl: "-lm".}
 
 type
   MatchKind = enum
