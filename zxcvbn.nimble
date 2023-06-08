@@ -3,11 +3,11 @@ mode = ScriptMode.Verbose
 packageName   = "zxcvbn"
 version       = "0.1.0"
 author        = "Status Research & Development GmbH"
-description   = "Nim bindings for the zxcvbn-c password strenght estimator"
+description   = "Nim bindings for the zxcvbn-c password strength estimator"
 license       = "Apache License 2.0"
 skipDirs      = @["tests"]
 
-requires "nim >= 1.0.0",
+requires "nim >= 1.6.0",
          "testutils"
 
 proc test(args, path: string) =
