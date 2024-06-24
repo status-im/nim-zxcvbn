@@ -7,7 +7,7 @@ description   = "Nim bindings for the zxcvbn-c password strength estimator"
 license       = "Apache License 2.0"
 skipDirs      = @["tests"]
 
-requires "nim >= 1.6.0",
+requires "nim >= 2.0.0",
          "testutils"
 
 proc test(args, path: string) =
@@ -18,9 +18,7 @@ proc test(args, path: string) =
     path
 
 task test, "Run all tests":
-  test "--threads:off", "tests/test_all.nim"
-  test "--threads:on", "tests/test_all.nim"
-
-  if (NimMajor, NimMinor) > (1, 6):
-    test "--threads:off --mm:refc", "tests/test_all.nim"
-    test "--threads:on --mm:refc", "tests/test_all.nim"
+  test "--threads:off --mm:orc", "tests/test_all.nim"
+  test "--threads:on --mm:orc", "tests/test_all.nim"
+  test "--threads:off --mm:refc", "tests/test_all.nim"
+  test "--threads:on --mm:refc", "tests/test_all.nim"
