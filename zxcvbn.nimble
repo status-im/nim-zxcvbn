@@ -18,9 +18,9 @@ proc test(args, path: string) =
     path
 
 task test, "Run all tests":
-  test "--threads:off", "tests/test_all.nim"
-  test "--threads:on", "tests/test_all.nim"
+  test "--threads:off --mm:refc", "tests/test_all.nim"
+  test "--threads:on  --mm:refc", "tests/test_all.nim"
 
   if (NimMajor, NimMinor) > (1, 6):
-    test "--threads:off --mm:refc", "tests/test_all.nim"
-    test "--threads:on --mm:refc", "tests/test_all.nim"
+    test "--threads:off --mm:orc",  "tests/test_all.nim"
+    test "--threads:on  --mm:orc",  "tests/test_all.nim"
