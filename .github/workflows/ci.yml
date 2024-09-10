@@ -14,7 +14,7 @@ jobs:
         target:
           - os: linux
             cpu: amd64
-          - os: linux-gcc-14 # This is to use ubuntu 24 and install gcc 14. Should be removed when ubuntu-latest is 24.04
+          - os: linux-gcc-14 # This is to use ubuntu 24 and install gcc 14. Should be removed when ubuntu-latest is 26.04
             cpu: amd64
           - os: linux
             cpu: i386
@@ -31,7 +31,7 @@ jobs:
             builder: ubuntu-latest
             shell: bash
           - target:
-              os: linux-gcc-14 # This is to use ubuntu 24 and install gcc 14. Should be removed when ubuntu-latest is 24.04
+              os: linux-gcc-14 # This is to use ubuntu 24 and install gcc 14. Should be removed when ubuntu-latest is 26.04
             builder: ubuntu-24.04
             shell: bash
           - target:
