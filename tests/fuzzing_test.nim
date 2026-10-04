@@ -2,7 +2,7 @@ import
   testutils/fuzzing,
   ../zxcvbn
 
-proc toString(data: openarray[byte]): string =
+proc toString(data: openArray[byte]): string =
   result = newString(data.len)
   if data.len > 0:
     copyMem(addr result[0], unsafeAddr data[0], data.len)
