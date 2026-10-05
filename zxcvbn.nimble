@@ -1,14 +1,13 @@
 mode = ScriptMode.Verbose
 
 packageName   = "zxcvbn"
-version       = "0.1.0"
+version       = "0.2.0"
 author        = "Status Research & Development GmbH"
 description   = "Nim bindings for the zxcvbn-c password strength estimator"
 license       = "Apache License 2.0"
 skipDirs      = @["tests"]
 
-requires "nim >= 1.6.0",
-         "testutils"
+requires "nim >= 1.6.16"
 
 let nimc = getEnv("NIMC", "nim") # Which nim compiler to use
 let lang = getEnv("NIMLANG", "c") # Which backend (c/cpp/js)
